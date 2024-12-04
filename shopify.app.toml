@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "f34c81756ca9b5bf87c04118fff20ed2"
+name = "widsed-post-purchase-app-new"
+application_url = "https://delays-hello-buttons-isolated.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "wisdom-app-setup.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customers,read_fulfillments,read_inventory,read_orders,read_products,read_reports,write_checkouts,write_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://delays-hello-buttons-isolated.trycloudflare.com/auth/callback",
+  "https://delays-hello-buttons-isolated.trycloudflare.com/auth/shopify/callback",
+  "https://delays-hello-buttons-isolated.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[app_proxy]
+url = "https://delays-hello-buttons-isolated.trycloudflare.com/get-offer"
+subpath = "offer"
+prefix = "apps"
+
+[pos]
+embedded = false
